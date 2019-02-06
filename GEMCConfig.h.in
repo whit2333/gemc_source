@@ -1,0 +1,19 @@
+#ifndef GEMC_CONFIG_HH
+#define GEMC_CONFIG_HH
+// the configured options and settings for Tutorial
+#define GEMC_MAJOR_VERSION @GEMC_MAJOR_VERSION@
+#define GEMC_MINOR_VERSION @GEMC_MINOR_VERSION@
+#define GEMC_PATCH_VERSION @GEMC_PATCH_VERSION@
+#define GEMC_VERSION "@GEMC_MAJOR_VERSION@.@GEMC_MINOR_VERSION@"
+
+#cmakedefine GEMC_PRINT_DEBUG 
+
+#define GEMC_DATA_DIR      "@GEMC_DATA_DIR@"
+#define GEMC_CXX_CFLAGS    "@GEMC_CXX_CFLAGS@"
+#define GEMC_CXX_LDFLAGS   "@GEMC_CXX_LDFLAGS@"
+#define GEMC_CXX_LIBS      "@GEMC_CXX_LIBS@"
+#define GEMC_CXX_INC_DIR   "@GEMC_CXX_INC_DIR@"
+#define GEMC_PREFIX        "@CMAKE_INSTALL_PREFIX@"
+
+#endif
+
