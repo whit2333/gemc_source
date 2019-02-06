@@ -282,12 +282,13 @@ void MDetectorConstruction::buildCADDetector(string dname, string filename, int 
 	if(VERB > 1)
 		cout << "  > Parsing CAD volume from " << filename << endl;
 
-	CADMesh * mesh = new CADMesh((char *) filename.c_str());
+        //CADMesh * mesh = new CADMesh((char *) filename.c_str());
+        auto mesh = CADMesh::TessellatedMesh::FromPLY((char *) filename.c_str());
 	mesh->SetScale(mm);
 	mesh->SetReverse(false);
 
 	// solid
-	G4VSolid *cad_solid = mesh->TessellatedMesh();
+	G4VSolid *cad_solid = mesh->GetSolid();//TessellatedMesh();
 
 	// material
 	string materialName = trimSpacesFromString((*hallMap)[dname].material);
