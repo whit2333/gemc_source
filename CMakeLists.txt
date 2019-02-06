@@ -323,7 +323,7 @@ target_include_directories(GEMC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
 
     PUBLIC ${MLibrary_INCLUDE_DIRS}
-    PUBLIC ${EVIO_INCLUDE_DIRS}
+    PUBLIC ${EVIO_INCLUDE_DIRS} /usr/local/include/evio
     PUBLIC ${CADMESH_INCLUDE_DIRS}
   )
 
