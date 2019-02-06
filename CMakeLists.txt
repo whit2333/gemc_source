@@ -285,7 +285,7 @@ target_link_libraries(libGEMC
   PUBLIC Qt5::Sql
   PUBLIC ${Geant4_LIBRARIES} ${cadmesh_LIBRARIES} 
   PUBLIC ${MLibrary_LIBRARIES}
-  PUBLIC -lMlibrary
+  PUBLIC -L${CMAKE_INSTALL_PREFIX}/lib -lMLibrary
   PUBLIC EVIO::EVIO
   PUBLIC ${cadmesh_LIBRARIES}
   ${CMAKE_DL_LIBS}
@@ -334,18 +334,22 @@ target_include_directories(GEMC
 
 #target_compile_features(GEMC PUBLIC cxx_std_14)
 
-
+message("cadmesh_LIBRARIES: ${cadmesh_LIBRARIES}")
 target_link_libraries(GEMC
   PUBLIC libGEMC
   PUBLIC Qt5::Widgets
   PUBLIC Qt5::Xml
   PUBLIC Qt5::Sql
-  PUBLIC ${Geant4_LIBRARIES} ${cadmesh_LIBRARIES} 
+  PUBLIC ${Geant4_LIBRARIES} 
+  PUBLIC ${cadmesh_LIBRARIES} 
   PUBLIC ${MLibrary_LIBRARIES}
-  PUBLIC -lMlibrary
+  PUBLIC -L${CMAKE_INSTALL_PREFIX}/lib -lMLibrary
+  PUBLIC -L${CMAKE_INSTALL_PREFIX}/lib -levio -levioxx
+  PUBLIC -L${CMAKE_INSTALL_PREFIX}/lib -lccdb
   PUBLIC EVIO::EVIO
   PUBLIC ${cadmesh_LIBRARIES}
   ${CMAKE_DL_LIBS}
+  PUBLIC ROOT::Core ROOT::MathCore ROOT::Graf ROOT::Matrix ROOT::Physics ROOT::Rint ROOT::Tree
   )
 
 
