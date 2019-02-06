@@ -64,6 +64,7 @@ include_directories(${CMAKE_SOURCE_DIR} ${ROOT_INCLUDE_DIRS})
 add_definitions(${ROOT_CXX_FLAGS})
 
 find_package(EVIO REQUIRED)
+
 get_target_property(EVIO_INCLUDE_DIRS EVIO::evioxx INTERFACE_INCLUDE_DIRECTORIES)
 
 # CADMesh
@@ -265,7 +266,7 @@ target_include_directories(libGEMC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
 
     PUBLIC ${MLibrary_INCLUDE_DIRS}
-    PUBLIC ${EVIO_INCLUDE_DIRS}
+    PUBLIC ${EVIO_INCLUDE_DIRS} /usr/local/include/evio
     PUBLIC ${CADMESH_INCLUDE_DIRS}
   )
 message("EVIO_INCLUDE_DIRS  ${EVIO_INCLUDE_DIRS}")
