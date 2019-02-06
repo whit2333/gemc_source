@@ -268,6 +268,7 @@ target_include_directories(libGEMC
     PUBLIC ${EVIO_INCLUDE_DIRS}
     PUBLIC ${CADMESH_INCLUDE_DIRS}
   )
+message("EVIO_INCLUDE_DIRS  ${EVIO_INCLUDE_DIRS}")
 
 #jtarget_compile_options(GEMC
 #j  PUBLIC
