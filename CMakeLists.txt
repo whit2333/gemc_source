@@ -266,9 +266,11 @@ target_include_directories(libGEMC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
 
     PUBLIC ${MLibrary_INCLUDE_DIRS}
-    PUBLIC ${EVIO_INCLUDE_DIRS} /usr/local/include/evio
+    PUBLIC ${EVIO_INCLUDE_DIRS} 
     PUBLIC ${CADMESH_INCLUDE_DIRS}
-  )
+    )
+target_include_directories(libGEMC SYSTEM PUBLIC /usr/local/include/evio)
+
 message("EVIO_INCLUDE_DIRS  ${EVIO_INCLUDE_DIRS}")
 
 #jtarget_compile_options(GEMC
